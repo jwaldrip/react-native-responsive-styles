@@ -1,0 +1,33 @@
+{
+  "name": "react-native-responsive-styles",
+  "description": "Responsive Style Helpers for React Native",
+  "version": "0.1.0",
+  "engines": {
+    "node": "12",
+    "yarn": ">=1.17.3"
+  },
+  "dependencies": {
+    "@react-native-community/eslint-config": "2.0.0",
+    "@types/react-native": "0.63.12",
+    "@typescript-eslint/eslint-plugin": "4.3.0",
+    "@typescript-eslint/parser": "4.3.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.2.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-config-standard-react": "9.2.0",
+    "eslint-config-standard-with-typescript": "19.0.1",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-jest": "23.20.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.20.5",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-react-native": "3.8.1",
+    "eslint-plugin-relay": "1.8.1",
+    "eslint-plugin-standard": "4.0.1",
+    "prettier": "2.0.5",
+    "react": "16.13.1",
+    "react-native": "0.63.4"
+  }
+}

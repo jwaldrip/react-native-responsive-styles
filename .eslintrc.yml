@@ -1,0 +1,67 @@
+root: true
+parser: "@typescript-eslint/parser"
+parserOptions:
+  project: ./tsconfig.json
+  tsconfigRootDir: .
+  ecmaVersion: 2020
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+plugins:
+  - react-native
+  - relay
+settings:
+  react:
+    version: detect
+extends: # Extend community maintained standards
+  - standard-with-typescript # Standard.js Typscript Rules
+  - standard-react # Standard.js React Rules
+  - plugin:prettier/recommended # Prettier Rules
+  - prettier # Remove Prettier Conflicts
+  - prettier/standard # Remove Prettier Stanard Conflicts
+  - prettier/react # Remove Prettier React Conflicts
+  - prettier/@typescript-eslint # Remove Prettier TS Conflicts
+  - plugin:react-hooks/recommended # Rules for hooks
+rules: # Changing of rules is forbidden unless absolutely needed
+  "react/prop-types": ["error", { ignore: ["children"] }]
+  "relay/graphql-syntax": "error"
+  "relay/graphql-naming": "error"
+  "react-native/no-unused-styles": "error"
+  "react-native/no-inline-styles": "error"
+  "react-native/no-color-literals": "error"
+  "react-native/no-raw-text": "error"
+  "@typescript-eslint/no-invalid-void-type": "off" # void and undefined are not compatible
+  "@typescript-eslint/explicit-function-return-type": "off" # Too verbose, and TS infers
+  "@typescript-eslint/triple-slash-reference": "off" # Allow for triple slash directives
+  "@typescript-eslint/strict-boolean-expressions": "off" # Allow for booleanish expressions
+  "@typescript-eslint/no-floating-promises": [
+      warn,
+      { ignoreIIFE: true, ignoreVoid: true },
+    ] # Whitelist some floating promises
+  "@typescript-eslint/prefer-nullish-coalescing":
+    [
+      "warn",
+      { ignoreConditionalTests: true, ignoreMixedLogicalExpressions: true },
+    ]
+  "@typescript-eslint/naming-convention": "off"
+  "@typescript-eslint/restrict-template-expressions": "off"
+  "@typescript-eslint/no-unnecessary-type-assertion": "off"
+  "@typescript-eslint/no-use-before-define": "off"
+  "no-void": "off"
+  "react/jsx-handler-names": "off"
+overrides:
+  # Storybook Rules
+  - files:
+      - "*.stories.tsx"
+    rules:
+      react-native/no-inline-styles: "off"
+  # Jest rules
+  - files:
+      - jest-setup.js
+      - "*.test.ts"
+      - "*.test.tsx"
+    rules:
+      react-native/no-inline-styles: "off"
+    extends:
+      - plugin:jest/recommended # Jest Recommended Rules
+      - plugin:jest/style # Jest Style Rules
